@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RobsonDev.Api</name>
+    </assembly>
+    <members>
+        <member name="M:RobsonDev.Api.Controllers.PeoplesController.GetAsync">
+            <summary>
+            Retorna uma lista de pessoas
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+        <member name="M:RobsonDev.Api.Controllers.PeoplesController.GetAsync(System.Int32)">
+            <summary>
+            Retorna uma pessoa pelo número de id informado.
+            </summary>
+            <returns><see cref="T:RobsonDev.Domain.Contracts.People"/></returns>
+        </member>
+    </members>
+</doc>

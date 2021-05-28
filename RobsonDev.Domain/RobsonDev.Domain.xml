@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RobsonDev.Domain</name>
+    </assembly>
+    <members>
+        <member name="M:RobsonDev.Domain.Contracts.IRead`1.FindAsync(System.Int32)">
+            <summary>
+            Find data by <see cref="!:id"/>.
+            </summary>
+            <param name="id">Identifier number.</param>
+            <returns><typeparamref name="T"/></returns>
+        </member>
+        <member name="M:RobsonDev.Domain.Contracts.IRead`1.AllAsync">
+            <summary>
+            Return a list of generics.
+            </summary>
+            <returns>IEnumerable&lt;<typeparamref name="T"/>&gt;</returns>
+        </member>
+    </members>
+</doc>
