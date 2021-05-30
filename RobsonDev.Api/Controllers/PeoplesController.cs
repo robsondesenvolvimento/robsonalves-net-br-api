@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using RobsonDev.Domain.Contracts;
-using RobsonDev.Repository.Repositories;
-using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using RobsonDev.Data.Repositories;
+using RobsonDev.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace RobsonDev.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Administrator")]
     public class PeoplesController : ControllerBase
     {
         private readonly IPeopleRepository _peopleRepository;
@@ -24,10 +26,15 @@ namespace RobsonDev.Api.Controllers
         /// </summary>
         /// <returns><see cref="IEnumerable{People}"/></returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<IEnumerable<People>>> GetAsync()
         {
             var list = await _peopleRepository.AllAsync().ConfigureAwait(false);
-            return list?.ToList();
+
+            if (list == null) return NoContent();
+
+            return Ok(list?.ToList());
         }
 
         /// <summary>
@@ -35,9 +42,15 @@ namespace RobsonDev.Api.Controllers
         /// </summary>
         /// <returns><see cref="People"/></returns>
         [HttpGet("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<People>> GetAsync([FromRoute] int id)
         {
-            return await _peopleRepository.FindAsync(id).ConfigureAwait(false);
+            var pessoa = await _peopleRepository.FindAsync(id).ConfigureAwait(false);
+
+            if (pessoa == null) return NoContent();
+
+            return Ok(pessoa);
         }
     }
 }

@@ -4,6 +4,13 @@
         <name>RobsonDev.Api</name>
     </assembly>
     <members>
+        <member name="M:RobsonDev.Api.Controllers.AuthenticateController.LoginAsync(RobsonDev.Authentication.Models.User)">
+            <summary>
+            Login
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
         <member name="M:RobsonDev.Api.Controllers.PeoplesController.GetAsync">
             <summary>
             Retorna uma lista de pessoas
@@ -14,7 +21,26 @@
             <summary>
             Retorna uma pessoa pelo número de id informado.
             </summary>
-            <returns><see cref="T:RobsonDev.Domain.Contracts.People"/></returns>
+            <returns><see cref="T:RobsonDev.Domain.Entities.People"/></returns>
+        </member>
+        <member name="T:RobsonDev.Api.Services.SeedingService">
+            <summary>
+            Seeding service static class.
+            </summary>
+        </member>
+        <member name="M:RobsonDev.Api.Services.SeedingService.PeoplesSeedingStart(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Seeding tables with data of peoples.
+            </summary>
+            <param name="appBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RobsonDev.Api.Services.SeedingService.UsersSeedingStart(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Seeding tables with data of users.
+            </summary>
+            <param name="appBuilder"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

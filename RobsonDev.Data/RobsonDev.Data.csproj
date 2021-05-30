@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RobsonDev.Authentication\RobsonDev.Authentication.csproj" />
+    <ProjectReference Include="..\RobsonDev.Domain\RobsonDev.Domain.csproj" />
+    <ProjectReference Include="..\RobsonDev.Services\RobsonDev.Services.csproj" />
+  </ItemGroup>
+
+</Project>
