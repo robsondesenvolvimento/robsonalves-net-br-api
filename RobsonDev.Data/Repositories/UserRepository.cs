@@ -52,5 +52,28 @@ namespace RobsonDev.Data.Repositories
 
             return userFind;
         }
+
+        public async Task<User> Insert(User user)
+        {
+            var userFind = await _context.Users.FindAsync(user);
+            if (userFind == null) return null;
+
+            user.Password = PasswordCryptoHelper.GeneratePasswordHash(user.Password);
+
+            var userState = await _context.Users.AddAsync(user);
+            return userState.Entity;
+        }
+
+        public async Task<bool> Update(User user)
+        {
+            var userFind = await _context.Users.FindAsync(user.Id);
+            if (userFind == null) return false;
+
+            user.Password = PasswordCryptoHelper.GeneratePasswordHash(user.Password);
+
+            _context.Entry(userFind).CurrentValues.SetValues(user);
+            var modifications = await _context.SaveChangesAsync();
+            return modifications > 0;
+        }
     }
 }

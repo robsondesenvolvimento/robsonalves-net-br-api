@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RobsonDev.Data.Repositories
 {
-    public interface IUserRepository : IRead<User>
+    public interface IUserRepository : IRead<User>, IWrite<User>
     {
         public Task<User> FindAsync(User user);
     }

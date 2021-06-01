@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RobsonDev.Authentication.Models;
 using RobsonDev.Authentication.Services;
+using RobsonDev.Common;
 using RobsonDev.Data.Repositories;
 using RobsonDev.Services;
 using System;
@@ -46,7 +47,21 @@ namespace RobsonDev.Api.Controllers
 
             userFind.Password = "";
 
-            return Ok(new { user = userFind, token = token });
+            return Ok(new UserViewModel { User = userFind, Token = token });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<User>> PostAsync([FromBody] User user)
+        {
+            var us =  await _userRepository.Insert(user).ConfigureAwait(false);
+            return Created("",us);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> PutAsync([FromBody] User user)
+        {
+            await _userRepository.Update(user);
+            return Ok();
         }
     }
 }

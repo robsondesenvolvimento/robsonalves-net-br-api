@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RobsonDev.Common\RobsonDev.Common.csproj" />
     <ProjectReference Include="..\RobsonDev.Data\RobsonDev.Data.csproj" />
     <ProjectReference Include="..\RobsonDev.Domain\RobsonDev.Domain.csproj" />
     <ProjectReference Include="..\RobsonDev.Services\RobsonDev.Services.csproj" />

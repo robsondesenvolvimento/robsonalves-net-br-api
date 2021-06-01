@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsonDev.Domain", "RobsonD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsonDev.Api", "RobsonDev.Api\RobsonDev.Api.csproj", "{AB8E2E6A-BB25-44D5-B607-5C1E369EC5C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobsonDev.Data", "RobsonDev.Data\RobsonDev.Data.csproj", "{5301CE13-1A97-4E63-87D9-362771561EB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsonDev.Data", "RobsonDev.Data\RobsonDev.Data.csproj", "{5301CE13-1A97-4E63-87D9-362771561EB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobsonDev.Authentication", "RobsonDev.Authentication\RobsonDev.Authentication.csproj", "{E86DF20F-39C0-4DAA-BB87-FFAE8D508B50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsonDev.Authentication", "RobsonDev.Authentication\RobsonDev.Authentication.csproj", "{E86DF20F-39C0-4DAA-BB87-FFAE8D508B50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobsonDev.Services", "RobsonDev.Services\RobsonDev.Services.csproj", "{2E0F5381-082A-4D9C-8C9B-B30CBEEE8854}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsonDev.Services", "RobsonDev.Services\RobsonDev.Services.csproj", "{2E0F5381-082A-4D9C-8C9B-B30CBEEE8854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobsonDev.Test", "RobsonDev.Test\RobsonDev.Test.csproj", "{C91BB7FB-988E-42B0-AAA5-DBA001836484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobsonDev.Common", "RobsonDev.Common\RobsonDev.Common.csproj", "{39D05734-930F-4F88-A935-C6148AB12B53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{2E0F5381-082A-4D9C-8C9B-B30CBEEE8854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E0F5381-082A-4D9C-8C9B-B30CBEEE8854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E0F5381-082A-4D9C-8C9B-B30CBEEE8854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C91BB7FB-988E-42B0-AAA5-DBA001836484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C91BB7FB-988E-42B0-AAA5-DBA001836484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C91BB7FB-988E-42B0-AAA5-DBA001836484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C91BB7FB-988E-42B0-AAA5-DBA001836484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D05734-930F-4F88-A935-C6148AB12B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D05734-930F-4F88-A935-C6148AB12B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D05734-930F-4F88-A935-C6148AB12B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D05734-930F-4F88-A935-C6148AB12B53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
