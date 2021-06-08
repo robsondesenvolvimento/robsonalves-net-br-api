@@ -31,6 +31,7 @@ namespace RobsonDev.Api
 
             services.AddDbContextPool<ApplicationDbContext>(options =>
             {
+                //options.UseSqlite(Configuration.GetConnectionString("Sqlite"));
                 options.UseInMemoryDatabase("RobsonDev");
             });
 
@@ -82,9 +83,14 @@ namespace RobsonDev.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RobsonDev.Api v1"));
+                
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "RobsonDev.Api v1");
+            });
+
             app.UsersSeedingStart().ConfigureAwait(false);
             app.PeoplesSeedingStart().ConfigureAwait(false);
 

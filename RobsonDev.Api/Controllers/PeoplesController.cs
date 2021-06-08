@@ -26,9 +26,9 @@ namespace RobsonDev.Api.Controllers
         /// </summary>
         /// <returns><see cref="IEnumerable{People}"/></returns>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(People))]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<IEnumerable<People>>> GetAsync()
+        public async Task<ActionResult> GetAsync()
         {
             var list = await _peopleRepository.AllAsync().ConfigureAwait(false);
 
@@ -42,9 +42,9 @@ namespace RobsonDev.Api.Controllers
         /// </summary>
         /// <returns><see cref="People"/></returns>
         [HttpGet("{id:int}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(People))]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<People>> GetAsync([FromRoute] int id)
+        public async Task<ActionResult> GetAsync([FromRoute] int id)
         {
             var pessoa = await _peopleRepository.FindAsync(id).ConfigureAwait(false);
 

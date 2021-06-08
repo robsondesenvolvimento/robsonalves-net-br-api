@@ -33,9 +33,8 @@ namespace RobsonDev.Api.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<dynamic>> LoginAsync([FromBody] User user)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserViewModel))]
+        public async Task<ActionResult> LoginAsync([FromBody] User user)
         {
             var userFind = await _userRepository.FindAsync(user);            
 
@@ -50,18 +49,18 @@ namespace RobsonDev.Api.Controllers
             return Ok(new UserViewModel { User = userFind, Token = token });
         }
 
-        [HttpPost]
-        public async Task<ActionResult<User>> PostAsync([FromBody] User user)
-        {
-            var us =  await _userRepository.Insert(user).ConfigureAwait(false);
-            return Created("",us);
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> PostAsync([FromBody] User user)
+        //{
+        //    var us =  await _userRepository.Insert(user).ConfigureAwait(false);
+        //    return Created("",us);
+        //}
 
-        [HttpPut]
-        public async Task<ActionResult> PutAsync([FromBody] User user)
-        {
-            await _userRepository.Update(user);
-            return Ok();
-        }
+        //[HttpPut]
+        //public async Task<ActionResult> PutAsync([FromBody] User user)
+        //{
+        //    await _userRepository.Update(user);
+        //    return Ok();
+        //}
     }
 }
